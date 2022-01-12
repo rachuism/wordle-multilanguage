@@ -9,7 +9,7 @@ export default function Wordleboard() {
 
     for(let i=0; i <horizontalAxis.length; i++){
         for(let j=0; j<verticalAxis.length; j++){
-            board.push(<span>{horizontalAxis[i]} {verticalAxis[j]}</span>)
+            board.push(<div className='tile'>[{horizontalAxis[i]} {verticalAxis[j]}]</div>)
         }
     }
     return <div id="Wordleboard">{board}</div>;
