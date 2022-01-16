@@ -11,6 +11,7 @@ export const Logger = () => {
     
     // e.target is a reference to the element
     // this event was fired on.
+    //Add keyboard support
     const logAndUpdate = (e: ChangeEvent): void => {
       const newValue = (e.target as HTMLTextAreaElement).value;
       console.log(newValue);
