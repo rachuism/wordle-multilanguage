@@ -26,13 +26,16 @@ export const Logger = () => {
     );
   }
 
-export default function Wordleboard() {
+  type Props = {
+    word: string
+  }
+
+
+export default function Wordleboard(word: Props) {
     let board = [];
 
-    for(let i=0; i <horizontalAxis.length; i++){
-        for(let j=0; j<verticalAxis.length; j++){
-            board.push(<div className='tile'>[{horizontalAxis[i]} {verticalAxis[j]}]</div>)
-        }
+    for(let i=0; i <word.word.length; i++){
+            board.push(<div className='tile'>[{word.word[i]}]</div>)
     }
     return <div id="Wordleboard">{board}</div>;
 }

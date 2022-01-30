@@ -2,14 +2,14 @@ import { KeyboardEvent, useEffect } from "react";
 
 type Props = {
     onChar: (value: string) => void
-    onDelete: () => void
-    onEnter: () => void
-    guesses: string[]
   }
 
+export const Input = ({ onChar }: Props) => {
   useEffect(() => {
       const listener = (e: KeyboardEvent) => {
         const key = e.key
         onChar(key)
       }
   }, [onChar])
+  return <div >Hello</div>;
+}
