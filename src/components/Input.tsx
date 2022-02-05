@@ -10,6 +10,10 @@ export const Input = ({ onChar }: Props) => {
         const key = e.key
         onChar(key)
       }
+      window.addEventListener('keyup', listener)
+      return () => {
+        window.removeEventListener('keyup', listener)
+      }
   }, [onChar])
   return <div >Hello</div>;
 }
