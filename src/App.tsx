@@ -10,12 +10,11 @@ const [word, setWord] = React.useState("");
 const [goalWord, setGoalWord] = React.useState("");
 const [gameWin, setGameWin] = React.useState(false);
 
-
-setGoalWord("goal");
 const onChar = (char : string ) => {
+  setGoalWord("goal");
   setWord(`${word}${char}`)
-  if(word.length == 5){
-    if (word === goalWord){
+  if(word.length == 4){
+    if (word == goalWord){
       setGameWin(true);
       console.log("you win")
     }

@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect } from "react";
+import {  useEffect } from "react";
 
 type Props = {
     onChar: (value: string) => void
@@ -6,10 +6,11 @@ type Props = {
 
 export const Input = ({ onChar }: Props) => {
   useEffect(() => {
-      const listener = (e: KeyboardEvent) => {
-        const key = e.key
+      const listener = (ev: KeyboardEvent) => {
+        const key = ev.key
         onChar(key)
       }
+      
       window.addEventListener('keyup', listener)
       return () => {
         window.removeEventListener('keyup', listener)
