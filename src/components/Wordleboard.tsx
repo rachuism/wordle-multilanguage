@@ -33,7 +33,6 @@ export const Logger = () => {
 
 export default function Wordleboard(word: Props) {
     let board = [];
-
     for(let i=0; i <word.word.length; i++){
             board.push(<div className='tile'>[{word.word[i]}]</div>)
     }
