@@ -1,5 +1,6 @@
 import react, {ChangeEvent, useState} from 'react';
 import './Wordleboard.css'
+import { Cell } from'./Cell'
 
 const verticalAxis = [1, 2, 3, 4, 5, 6, 7, 8];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -35,6 +36,9 @@ export default function Wordleboard(word: Props) {
     let board = [];
     for(let i=0; i <word.word.length; i++){
             board.push(<div className='tile'>[{word.word[i]}]</div>)
+            board.map((letter, i) => (
+              <Cell value={letter} />
+            ))
     }
     return <div id="Wordleboard">{board}</div>;
 }
