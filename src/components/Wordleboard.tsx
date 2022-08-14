@@ -37,8 +37,10 @@ export default function Wordleboard(word: Props) {
     for(let i=0; i <word.word.length; i++){
             board.push(word.word[i]);
             board.map((letter, i) => (
-              <Cell value={letter} />
+              <div className="flex justify-center mb-1">
+                <Cell value={letter} />
+              </div>
             ))
     }
-    return <div id="Wordleboard">{board}</div>;
+    //return <div id="Wordleboard">{board}</div>;
 }
