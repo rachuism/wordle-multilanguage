@@ -33,14 +33,10 @@ export const Logger = () => {
 
 
 export default function Wordleboard(word: Props) {
-    let board: string[]= [];
-    for(let i=0; i <word.word.length; i++){
-            board.push(word.word[i]);
-            board.map((letter, i) => (
-              <div className="flex justify-center mb-1">
-                <Cell value={letter} />
+              return <div>
+                <Cell value={word.word[0]} />
+                <Cell value={word.word[1]} />
+                <Cell value={word.word[2]} />
+                <Cell value={word.word[3]} />
               </div>
-            ))
-    }
-    //return <div id="Wordleboard">{board}</div>;
 }

@@ -14,11 +14,13 @@ export const Cell = ({
     value,
     position
 }: Props) => {
-
+    position = 3;
     var isHighContrast= true;
+    var REVEAL_TIME_MS= 350
     var isFilled = true;
     var shouldReveal = true;
-    var status = "";
+    var status = "present";
+    var animationDelay = `${position * REVEAL_TIME_MS}ms`
 
     const classes = classNames(
         'w-14 h-14 border-solid border-2 flex items-center justify-center mx-0.5 text-4xl font-bold rounded dark:text-white',
@@ -42,8 +44,10 @@ export const Cell = ({
     )
 
     return (
+      <div className={classes} style={{ animationDelay }}>
         <div className="cell">
             {value}
         </div>
+      </div>
     )
 }
